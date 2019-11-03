@@ -1,4 +1,5 @@
 
+////////this porgramme isfor binary search
 #include<stdio.h>
 #define pf printf
 #define sf scanf
