@@ -1,5 +1,6 @@
 
 ////////this porgramme isfor binary search
+// this is for git checkin
 #include<stdio.h>
 #define pf printf
 #define sf scanf
