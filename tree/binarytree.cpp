@@ -2,69 +2,86 @@
 #include <stdlib.h>
 #define pf printf
 #define sf scanf
+#include "bst.h"
 
-struct bst
-{
+// struct bst
+// {
 
-    struct bst* left;
-    int info;
-    struct bst* right;
-};
+//     struct bst* left;
+//     int info;
+//     struct bst* right;
+// }*temp;
 
-struct bst* insbtree(struct bst *root, int data)
-{
-    struct bst* node;
-    node=(struct bst*)malloc(sizeof(bst));
-    node->left = NULL;
-    node->right = NULL;
-    node->info = data;
+// struct bst* insbtree(struct bst *root, int data)
+// {
+  
 
-    if (root == NULL)
-    {
-        root = node;
-        return root;
-    }
-    else
-    {
-        struct bst* temp;
-        temp = root;
-        while (temp!=NULL)
-        {
-          
-            if (temp->info > data)
-            {
-                if (temp->left == NULL)
-                    {
-                    temp->left = node;
-                    break;
-                    }
-                temp = temp->left;
-            }
-            else if(temp->info < data)
-            {
+//     if (root == NULL)
+//     {
+//         struct bst* node;
+//     node=(struct bst*)malloc(sizeof(bst));
+//     node->left = NULL;
+//     node->right = NULL;
+//     node->info = data;
+//         root = node;
+//         return root;
+//     }
+//     else if(data<root->info){
+//         root->left=insbtree(root->left,data);
+//     }
+  
+//     else if(data>root->info){
+//         root->right=insbtree(root->right,data);
+//     }
+//     return root;
+// }
 
-                if (temp->right == NULL)
-                    {
-                        temp->right = node;
-                        break;
-                    }               
-                temp = temp->right;
-            }
-            
-        }
-    }
-    return root;
-}
+// void preorder(struct bst *root){
+//         if (root)
+//     {
+        
+//         printf("%d \t", root->info);
+//         preorder(root->left);
+//         preorder(root->right);
+//     }
+//     }
 
-void disbst(struct bst *root)
-{
-    if (root)
-    {
-        printf("%d \t", root->info);
-        disbst(root->left);
-        disbst(root->right);
-    }
-}
+// void inorder(struct bst *root){
+//         if (root)
+//     {
+        
+//         inorder(root->left);
+//         printf("%d \t", root->info);
+//         inorder(root->right);
+//     }
+// }
+// void postorder(struct bst *root){
+//         if (root)
+//     {
+        
+//         postorder(root->left);
+//         postorder(root->right);
+//         printf("%d \t", root->info);
+//     }
+// }
+// void disbst(struct bst *root)
+// {
+//     if(root)
+//     {
+//        pf("preorder :-");
+//         preorder(root);
+//        pf("\n");
+//         pf("inorder :-");
+//         inorder(root);
+//         pf("\n");
+//         pf("postorder :-");
+//         postorder(root);
+
+//     }
+    
+
+
+// }
 
 int main()
 {
@@ -74,7 +91,7 @@ int main()
     do
     {
         // disbst(root);
-        pf("enter your choice\n ");
+        pf("\n enter your choice\n ");
         pf("1.insert\n");
         pf("2.display\n");
         pf("0.exit\n ");
