@@ -1,3 +1,4 @@
+/////////////////structure of binary search tree.....
 struct bst
 {
 
@@ -6,6 +7,7 @@ struct bst
     struct bst* right;
 }*temp;
 
+/////////////////////insertion in binary search tree............
 struct bst* insbtree(struct bst *root, int data)
 {
   
@@ -30,6 +32,7 @@ struct bst* insbtree(struct bst *root, int data)
     return root;
 }
 
+/////////preorder traversal..............
 void preorder(struct bst *root){
         if (root)
     {
@@ -40,6 +43,8 @@ void preorder(struct bst *root){
     }
     }
 
+
+//////////inorder traversal..............
 void inorder(struct bst *root){
         if (root)
     {
@@ -48,7 +53,8 @@ void inorder(struct bst *root){
         printf("%d \t", root->info);
         inorder(root->right);
     }
-}
+    }
+//////////post order treversal .............
 void postorder(struct bst *root){
         if (root)
     {
@@ -57,9 +63,10 @@ void postorder(struct bst *root){
         postorder(root->right);
         printf("%d \t", root->info);
     }
-}
+    }
+/////////main display function from where calling is done..........
 void disbst(struct bst *root)
-{
+    {
     if(root)
     {
        pf("preorder :-");
@@ -75,4 +82,4 @@ void disbst(struct bst *root)
     
 
 
-}
+    }
