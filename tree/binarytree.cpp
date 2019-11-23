@@ -6,14 +6,15 @@
 struct bst
 {
 
-    struct bst *left;
+    struct bst* left;
     int info;
-    struct bst *right;
-} * temp;
+    struct bst* right;
+};
 
-struct bst *insbtree(struct bst *root, int data)
+struct bst* insbtree(struct bst *root, int data)
 {
-    struct bst *node;
+    struct bst* node;
+    node=(struct bst*)malloc(sizeof(bst));
     node->left = NULL;
     node->right = NULL;
     node->info = data;
@@ -25,6 +26,7 @@ struct bst *insbtree(struct bst *root, int data)
     }
     else
     {
+        struct bst* temp;
         temp = root;
         while (temp!=NULL)
         {
@@ -32,18 +34,23 @@ struct bst *insbtree(struct bst *root, int data)
             if (temp->info > data)
             {
                 if (temp->left == NULL)
+                    {
                     temp->left = node;
+                    break;
+                    }
                 temp = temp->left;
             }
             else if(temp->info < data)
             {
 
                 if (temp->right == NULL)
-                    temp->right = node;
+                    {
+                        temp->right = node;
+                        break;
+                    }               
                 temp = temp->right;
             }
-            else if (temp->info==data)
-                    temp=NULL;
+            
         }
     }
     return root;
@@ -66,7 +73,7 @@ int main()
     root = NULL;
     do
     {
-        disbst(root);
+        // disbst(root);
         pf("enter your choice\n ");
         pf("1.insert\n");
         pf("2.display\n");
