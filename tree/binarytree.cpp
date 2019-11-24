@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #define pf printf
 #define sf scanf
+
 #include "bst.h"  ////////header file with all the functions used in this programme
 
 
